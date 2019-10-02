@@ -16,7 +16,9 @@ fontColor = (255, 255, 255)
 def getprofile(id):
     conn = sqlite3.connect("database.db")
     cmd = "SELECT * FROM People WHERE ID="+ str(id)
+    cmd2 = "SELECT * FROM People"
     cursor = conn.execute(cmd)
+    cursor2 = conn.execute(cmd2)
     profile = None
 
     for row in cursor:
